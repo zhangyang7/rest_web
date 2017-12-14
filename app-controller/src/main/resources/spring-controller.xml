@@ -6,13 +6,21 @@
 
     <context:component-scan base-package="com.pbody.rest_web.controller"/>
 
-    <!-- 加载config.config.properties-->
+    <!-- 引入jdbc配置文件 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:config.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!--&lt;!&ndash; 加载config.properties&ndash;&gt;
     <bean  id="propertyConfigurer" class="com.pbody.rest_web.util.spring.DefaultPropertyPlaceholderConfigurer">
         <property name="ignoreUnresolvablePlaceholders" value="false"></property>
         <property name="fileEncoding" value="UTF-8"></property>
-    </bean>
+    </bean>-->
 
-    <bean id="orgController" class="com.pbody.rest_web.controller.manager.OrgController">
+    <bean class="com.pbody.rest_web.controller.manager.OrgController">
         <property name="app_root" value="${app_root}"></property>
         <property name="app_name" value="${app_name}"></property>
     </bean>

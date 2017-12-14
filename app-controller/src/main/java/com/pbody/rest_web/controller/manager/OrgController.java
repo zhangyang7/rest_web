@@ -36,8 +36,15 @@ public class OrgController extends BaseController {
     public void setApp_root(String app_root) {
         this.app_root = app_root;
     }
+    public String getApp_root() {
+        return app_root;
+    }
+    public String getApp_name() {
+        return app_name;
+    }
 
     /**
+
      * getTest
      * @param response
      * @return
@@ -48,7 +55,7 @@ public class OrgController extends BaseController {
 //        ResponseResult result=new ResponseResult();
 //        result.setResult("0");
 //        result.setMessage("success");
-        logger.info("The Lcation Of My Project is {},I call it {}'",app_root,app_name);
+        logger.info("The Lcation Of My Project is {},I call it {}'",getApp_root(),getApp_name());
         List<Org> orgList=orgService.getOrgList();
         objReturn(orgList,response);
     }
