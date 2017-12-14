@@ -1,10 +1,7 @@
 Java RESTful Project
 =========================
 1、Project Structure
-
-
-![Alt text](https://github.com/zhangyang7/static/blob/master/images/mq/structure.jpg)
-
+``` 
 .rest_web
 |-- ReadMe.md               maven多模块项目
 |-- pom.xml
@@ -29,8 +26,7 @@ Java RESTful Project
 |   |-- pom.xml             依赖controller、service、dao、util层
 |-- res-static              静态资源模块
 
-
-
+``` 
 
 
 
