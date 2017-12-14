@@ -3,7 +3,7 @@ Java RESTful Project
 1、Project Structure
 ``` 
 .rest_web
-|-- ReadMe.md               maven多模块项目
+|-- ReadMe.md               maven多模块
 |-- pom.xml
 |-- app-controller          
 |   |-- ReadMe.md           业务控制模块
