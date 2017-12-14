@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <classPathEntry
+    location="D:/Java/Repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"></classPathEntry>
+
+    <context id="context" targetRuntime="MyBatis3">
+        <!-- see http://www.mybatis.org/generator/reference/plugins.html -->
+        <!--<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://65.49.196.107:3306/pbody?characterEncoding=UTF-8&amp;useSSL=false"
+                        userId="root"
+                        password="1qaz@WSX">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--或固定输出目录  【targetProject="D:\Workspace\intelliJ\rest-web\app-dao\src\main\"】   -->
+        <javaModelGenerator targetPackage="com.pbody.rest_web.dao.bean" targetProject="D:\Workspace\intelliJ\rest-web\app-dao\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.pbody.rest_web.dao.xml" targetProject="D:\Workspace\intelliJ\rest-web\app-dao\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.pbody.rest_web.dao.dal" targetProject="D:\Workspace\intelliJ\rest-web\app-dao\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="auth_resource_info" domainObjectName="Resource"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"/>
+        <table tableName="auth_role_info" domainObjectName="Role"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"/>
+        <table tableName="auth_org_info" domainObjectName="Org"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"/>
+        <table tableName="auth_role_resources_rel" domainObjectName="RoleResRel"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"/>
+        <table tableName="auth_user_info" domainObjectName="User"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"/>
+        <table tableName="auth_user_role_rel" domainObjectName="UserRoleRel"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"/>
+
+    </context>
+</generatorConfiguration>
