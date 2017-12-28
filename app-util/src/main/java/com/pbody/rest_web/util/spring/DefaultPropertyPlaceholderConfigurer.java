@@ -31,12 +31,11 @@ public class  DefaultPropertyPlaceholderConfigurer extends PropertyPlaceholderCo
 
     /**
      * 设置配置文件路径
-     * 
+     *
      * @param fileUri
      * @return
-     */
+             */
     public boolean setLocationWithClassPath(String fileUri) {
-        System.out.println(">>>>>>>>>>>");
         ClassPathResource classPathResource = new ClassPathResource(fileUri);
         if (classPathResource.exists()) {
             super.setLocation(classPathResource);

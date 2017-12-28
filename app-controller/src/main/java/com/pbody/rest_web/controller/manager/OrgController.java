@@ -28,21 +28,6 @@ public class OrgController extends BaseController {
     @Autowired
     private OrgService orgService;
 
-    private String app_root;
-    private String app_name;
-    public void setApp_name(String app_name) {
-        this.app_name = app_name;
-    }
-    public void setApp_root(String app_root) {
-        this.app_root = app_root;
-    }
-    public String getApp_root() {
-        return app_root;
-    }
-    public String getApp_name() {
-        return app_name;
-    }
-
     /**
 
      * getTest
@@ -55,7 +40,7 @@ public class OrgController extends BaseController {
 //        ResponseResult result=new ResponseResult();
 //        result.setResult("0");
 //        result.setMessage("success");
-        logger.info("The Lcation Of My Project is {},I call it {}'",getApp_root(),getApp_name());
+        logger.info("The Lcation Of My Project is {},I call it {}'");
         List<Org> orgList=orgService.getOrgList();
         objReturn(orgList,response);
     }
