@@ -1,5 +1,6 @@
 package com.pbody.rest_web.service.api;
 
+import com.github.pagehelper.PageInfo;
 import com.pbody.rest_web.dao.bean.Org;
 
 import java.util.List;
@@ -12,9 +13,9 @@ import java.util.List;
 public interface OrgService {
 
     /**
-     * 获取组织信息列表
+     * 获取组织的分页列表
      * @return
      */
-    public List<Org> getOrgList();
+    public PageInfo<Org> getOrgList(Org orgForm);
 
 }

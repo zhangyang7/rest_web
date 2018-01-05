@@ -1,8 +1,18 @@
 package com.pbody.rest_web.dao.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 
-public class Org {
+/**
+ * @author Pbody
+ * @create 2018年1月5日16:00:10
+ * @description： 组织信息类
+ */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Org extends BaseBean{
     private Long id;
 
     private String orgid;
@@ -25,8 +35,10 @@ public class Org {
 
     private String vicemanager;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",locale = "zh", timezone = "GMT+8")
     private Date createtime;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",locale = "zh", timezone = "GMT+8")
     private Date lastupdatetime;
 
     public Long getId() {

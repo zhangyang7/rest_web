@@ -1,5 +1,7 @@
 package com.pbody.rest_web.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.pbody.rest_web.dao.bean.Org;
 import com.pbody.rest_web.dao.bean.OrgExample;
 import com.pbody.rest_web.dao.dal.OrgMapper;
@@ -20,10 +22,12 @@ public class OrgServiceImpl implements OrgService{
     @Autowired
     private OrgMapper orgMapper;
 
-    public List<Org> getOrgList(){
+    public PageInfo<Org> getOrgList(Org orgForm){
         OrgExample orgExample=new OrgExample();
 //        OrgExample.Criteria criteria = orgExample.createCriteria();
+        PageHelper.startPage(orgForm.getPageNum(), orgForm.getPageSize());
         List<Org> orgList=orgMapper.selectByExample(orgExample);
-        return orgList;
+        PageInfo<Org> pageInfo = new PageInfo<Org>(orgList);
+        return pageInfo;
     };
 }

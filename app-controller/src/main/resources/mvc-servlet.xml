@@ -10,9 +10,9 @@
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc.xsd" default-autowire="byName">
 
-    <!-- 启用注解 -->
-    <context:annotation-config/>
+
     <!-- 配置注解驱动 可以将request参数与绑定到controller参数上 -->
+    <!--<context:annotation-config/>-->
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler />
 

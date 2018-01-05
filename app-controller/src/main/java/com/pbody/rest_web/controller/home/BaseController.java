@@ -1,6 +1,6 @@
 package com.pbody.rest_web.controller.home;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,12 +19,12 @@ public abstract class BaseController {
 
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
-    public String toJson(Object obj) {
+    public String toJson(Object obj) throws Exception  {
         if (obj == null) {
             return "{}";
         } else {
-            Gson gson = new Gson();
-            return gson.toJson(obj);
+            ObjectMapper jackson = new ObjectMapper();
+            return jackson.writeValueAsString(obj);
         }
     }
 
@@ -40,7 +40,7 @@ public abstract class BaseController {
             out = response.getWriter();
             out.print(toJson(obj));
             out.flush();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             out.close();
